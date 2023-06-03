@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Noto+Sans+Mono:wght@400;700&display=swap");
+
+* {
+    box-sizing: border-box;
+
+
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: "Noto Sans Mono", sans-serif;
+    overflow-x: hidden;
+}
+
+
+.logo {
+    letter-spacing: 3px;
+    color: white;
+    font-weight: bold;
+
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: #595cff;
+    height: 75px;
+    align-items: center;
+    padding: 5px;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    width: 40%;
+    justify-content: space-between
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+
+
+
+}
+
+nav li a:hover {
+    color: yellow;
+}
+
+main {
+    overflow: auto;
+}
+
+.imageDemak {
+    width: 100%;
+}
+
+.imageDemak img {
+    width: 100%;
+    object-fit: contain;
+}
+
+.sejarah {
+    width: 100%;
+
+    background-color: #c6f8ff;
+    padding: 20px;
+
+
+}
+
+.sejarah h2 {
+    text-align: center;
+}
+
+.sejarah p {
+    text-align: justify;
+}
+
+.wisata {
+    background-color: #595cff;
+}
+
+.judul {
+    background-color: #c6f8ff;
+    text-align: center;
+    padding: 20px;
+}
+
+.wisata h2 {
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.wisata1 img {
+    width: 50%;
+    float: left;
+    margin-right: 20px;
+
+
+}
+
+.wisata1 {
+    color: white;
+    padding: 20px;
+    text-align: justify;
+}
+
+.wisata2 img {
+    width: 50%;
+    float: right;
+    margin-left: 20px;
+
+
+}
+
+.wisata2 {
+    color: white;
+    padding: 20px;
+    text-align: justify;
+}
+
+.kuliner {
+    background-color: #c6f8ff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.kuliner1 {
+
+    border: 1px solid black;
+    background-color: white;
+    width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+
+}
+
+.kuliner1 img {
+    width: 250px;
+    height: 175px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    object-fit: cover;
+
+}
+
+.kuliner1 h3 {
+    text-align: center;
+    margin: 10px;
+}
+
+.profile {
+    background-color: #595cff;
+    padding: 20px;
+
+}
+
+.profile1 {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: white;
+    width: 350px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.profile1 img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin: 10px;
+    border-radius: 50%;
+}
+
+.profile h2 {
+    text-align: center;
+    color: white;
+    padding: 20px;
+}
+
+footer {
+    padding: 20px;
+
+    background-color: #c6f8ff;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    position: relative;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    left: -6px;
+    top: -3px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: #c6f8ff;
+    border-radius: 3px;
+    transition: all 1s;
+    z-index: 2;
+}
+
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked~span:nth-child(2) {
+    transform: rotate(45deg) translate(-1px, -1px);
+}
+
+.menu-toggle input:checked~span:nth-child(4) {
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked~span:nth-child(3) {
+
+    transform: scale(0);
+}
+
+@media screen and (max-width: 768px) {
+
+    nav ul {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+
+    .menu-toggle {
+        display: flex;
+    }
+
+
+
+    nav ul {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 80%;
+        height: 100vh;
+        justify-content: space-evenly;
+        flex-direction: column;
+        align-items: center;
+        background-color: #5b5df2;
+        z-index: -1;
+        transform: translate(100%);
+        transition: all 1s;
+        opacity: 0;
+    }
+
+    nav ul.slide {
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .kuliner {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .kuliner1 {
+        margin: 20px 0;
+    }
+}
